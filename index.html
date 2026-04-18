@@ -1,0 +1,430 @@
+
+
+<link rel="stylesheet" href="seloger.css">
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">SeLoger<span>Chap</span></div>
+    <div class="nav-links">
+      <a href="#" class="active" onclick="showPage('home')">Accueil</a>
+      <a href="#" onclick="showPage('listings')">Annonces</a>
+      <a href="#" onclick="showPage('publish')">Publier</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </div>
+    <div style="display:flex;gap:0.5rem">
+      <button class="btn btn-outline" onclick="openModal('login')">Connexion</button>
+      <button class="btn btn-primary" onclick="openModal('register')">S'inscrire</button>
+    </div>
+  </div>
+</nav>
+
+<div id="page-home" class="page active">
+  <div class="hero">
+    <h1>Trouvez votre logement votre appartement chez: <strong><h2>SeLogerChap</h2></strong><br><span> SeLogerChap idéal pour la Côte d'Ivoire</span></h1>
+    <p>Appartements, maisons, studios — des milliers d'annonces sur SeLoger</p>
+    <div class="search-box">
+      <select style="min-width:120px;color:#888;padding:0.4rem 0">
+        <option>Type de bien</option>
+        <option>Appartement</option>
+        <option>Maison</option>
+        <option>Studio</option>
+    
+      </select>
+      <div class="divider"></div>
+      <input type="text" placeholder="Commune, quartier... (ex: Cocody, Yopougon)" style="flex:2"/>
+      <div class="divider"></div>
+      <select style="min-width:100px;color:#888;padding:0.4rem 0">
+        <option>Budget max</option>
+        <option>35 000 FCFA</option>
+        <option>40 000 FCFA</option>
+        <option>50 000 FCFA</option>
+        <option>100 000 FCFA</option>
+        <option>200 000 FCFA</option>
+        <option>500 000 FCFA</option>
+        <option>+500 000 FCFA</option>
+      </select>
+      <button class="btn btn-primary" style="border-radius:40px;padding:0.6rem 1.4rem" onclick="showPage('listings')">Rechercher</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>0+</strong><span>Annonces actives</span></div>
+      <div class="stat"><strong>0+</strong><span>Communes couvertes</span></div>
+      <div class="stat"><strong>0+</strong><span>Utilisateurs inscrits</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Parcourir par catégorie</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card orange" onclick="filterAndGo('louer')">
+        <div class="cat-icon o">🏢</div>
+        <div><h4>Appartements à louer</h4><p>0 annonces disponibles</p></div>
+      </div>
+      <div class="cat-card green" onclick="filterAndGo('vendre')">
+        <div class="cat-icon g">🏠</div>
+        <div><h4>Maisons à vendre</h4><p>0 annonces disponibles</p></div>
+      </div>
+      <div class="cat-card blue" onclick="filterAndGo('studio')">
+        <div class="cat-icon b">🛏</div>
+        <div><h4> Studios</h4><p>0 annonces disponibles</p></div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Annonces récentes</h2>
+      <a href="#" style="font-size:0.85rem;color:var(--orange);font-weight:600" onclick="showPage('listings')">Voir tout →</a>
+    </div>
+    <div class="listings-grid" id="home-listings"></div>
+
+    <div class="owner-banner">
+      <div>
+        <h3>Vous êtes propriétaire ou bailleur ?</h3>
+        <p>Publiez votre annonce  et touchez des milliers de locataires et acheteurs potentiels en Côte d'Ivoire.</p>
+        <button class="btn" style="background:#F4A05A;color:#fff;margin-top:1rem" onclick="showPage('publish')">Publier une annonce</button>
+      </div>
+      <div style="font-size:5rem;opacity:0.3">🏡</div>
+    </div>
+
+    <div class="section-header" style="margin-top:2rem">
+      <h2 class="section-title">Comment ça marche ?</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Recherchez</h4>
+        <p>Utilisez nos filtres pour trouver le logement qui correspond à vos critères et votre budget.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Contactez</h4>
+        <p>Contactez directement le propriétaire ou l'agence par appel, WhatsApp ou message.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Amménagez</h4>
+        <p>Visitez le bien, signez le contrat et installez-vous dans votre nouveau chez-vous !</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">SeLoger<span>Chap</span></div>
+          <p class="footer-desc">La plateforme immobilière de référence en Côte d'Ivoire. Trouvez ou publiez votre annonce rapidement et facilement.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('listings')">Annonces</a>
+          <a href="#" onclick="showPage('publish')">Publier une annonce</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Villes populaires</h5>
+          <a href="#">Abidjan - Cocody</a>
+          <a href="#">Abidjan - Yopougon</a>
+          <a href="#">Abidjan - Marcory</a>
+          <a href="#">Bouaké</a>
+          <a href="#">San-Pédro</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 SeLogerChap Dévellopper pas NEXT ALPHA · Tous droits réservés</span>
+        <span>Mode in ❤️ Côte d'Ivoire <strong>CI</strong></span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div id="page-listings" class="page">
+  <div class="section">
+    <h2 class="section-title" style="margin-bottom:1.2rem">Toutes les annonces</h2>
+    <div class="filters" id="filter-chips">
+      <button class="filter-chip active" data-filter="all">Tous</button>
+      <button class="filter-chip" data-filter="louer">À louer</button>
+      <button class="filter-chip" data-filter="vendre">À vendre</button>
+      <button class="filter-chip" data-filter="studio">Studios</button>
+      <button class="filter-chip" data-filter="cocody">Cocody</button>
+      <button class="filter-chip" data-filter="yopougon">Yopougon</button>
+      <button class="filter-chip" data-filter="marcory">Marcory</button>
+      <button class="filter-chip" data-filter="plateau">Plateau</button>
+    </div>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem" id="result-count"></p>
+    <div class="listings-grid" id="all-listings"></div>
+  </div>
+</div>
+
+<div id="page-publish" class="page">
+  <div class="section">
+    <div class="form-section">
+      <h2 class="section-title" style="margin-bottom:0.3rem">Publier une annonce</h2>
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1.5rem">Remplissez les informations ci-dessous. Votre annonce sera visible en quelques minutes.</p>
+      
+      <div class="success-banner" id="success-msg">
+        <span style="font-size:1.2rem">✅</span>
+        <p>Votre annonce a été soumise avec succès ! Elle sera publiée après validation.</p>
+      </div>
+
+      <div class="form-card">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.2rem;color:var(--orange)">📋 Informations du bien</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Type de transaction *</label>
+            <select><option>À louer</option><option>À vendre</option></select>
+          </div>
+          <div class="form-group">
+            <label>Type de bien *</label>
+            <select><option>Appartement</option><option>Maison</option><option>Studio</option></select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Titre de l'annonce *</label>
+          <input type="text" placeholder="Ex: Bel appartement F3 meublé à Cocody Riviera">
+        </div> 
+<div class="form-group">
+  <label>Commune / Ville *</label>
+  <div style="position:relative">
+    <input
+      type="text"
+      id="commune-input"
+      placeholder="Tapez ou choisissez... ex: Cocody, Bouaké"
+      autocomplete="off"
+      style="width:100%;border:1.5px solid #E8E3DC;border-radius:8px;padding:0.65rem 0.9rem;font-size:0.9rem;outline:none;font-family:inherit"
+    />
+    <div id="ac-dropdown" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1.5px solid #C85A1E;border-radius:10px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,0.12);max-height:260px;overflow-y:auto"></div>
+  </div>
+  <div id="commune-tag-wrap"></div>
+  <span style="font-size:0.75rem;color:#6B6B6B;margin-top:3px;display:block">Abidjan, Bouaké, San-Pédro — ou toute autre ville de CI</span>
+</div>
+          <div class="form-group">
+            <label>Quartier *</label>
+            <input type="text" placeholder="Ex: Riviera 2, Angré, II Plateaux">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description *</label>
+          <textarea placeholder="Décrivez votre bien : superficie, état, équipements, proximité des commodités..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-card" style="margin-top:1rem">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.2rem;color:var(--orange)">💰 Prix & Caractéristiques</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Prix (FCFA) *</label>
+            <input type="number" placeholder="Ex: 150000">
+          </div>
+          <div class="form-group">
+            <label>Superficie (m²)</label>
+            <input type="number" placeholder="Ex: 80">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nombre de pièces</label>
+            <select><option>Studio</option><option>F2</option><option>F3</option><option>F4</option><option>F5+</option></select>
+          </div>
+          <div class="form-group">
+            <label>Salles de bain</label>
+            <select><option>1</option><option>2</option><option>3+</option></select>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem">
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="checkbox"> Meublé</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="checkbox"> Climatisé</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="checkbox"> Groupe électrogène</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="checkbox"> Gardien</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="checkbox"> Parking</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="checkbox"> Eau courante</label>
+        </div>
+      </div>
+
+      <div class="form-card" style="margin-top:1rem">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.2rem;color:var(--orange)">📸 Photos du bien</h3>
+        <div class="img-upload">
+          <div style="font-size:2rem">📷</div>
+          <p>Cliquez pour ajouter des photos<br><span style="font-size:0.75rem;color:#aaa">JPG, PNG · Max 5 photos · 5MB chacune</span></p>
+        </div>
+      </div>
+
+      <div class="form-card" style="margin-top:1rem">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.2rem;color:var(--orange)">📞 Vos coordonnées</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nom complet *</label>
+            <input type="text" placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label>Téléphone / WhatsApp *</label>
+            <input type="tel" placeholder="+225 07 XX XX XX XX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.com">
+        </div>
+        <div style="display:flex;gap:1rem;margin-top:0.5rem">
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="radio" name="owner_type" checked> Propriétaire direct</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="radio" name="owner_type"> Agence immobilière</label>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;padding:0.9rem;font-size:1rem;margin-top:1.5rem;border-radius:10px" onclick="submitForm()">Publier mon annonce gratuitement</button>
+    </div>
+  </div>
+</div>
+
+<div id="page-contact" class="page">
+  <div class="section">
+    <div class="form-section">
+      <h2 class="section-title" style="margin-bottom:0.3rem">Nous contacter</h2>
+      <p style="font-size:0.88rem;color:var(--muted);margin-bottom:2rem">Une question ? Un problème ? Nous sommes là pour vous aider 24/24 7j7.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:2rem">
+        <div class="form-card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">📞</div>
+          <h4 style="font-size:0.9rem;margin-bottom:0.3rem">Téléphone</h4>
+          <p style="font-size:0.82rem;color:var(--muted)">+225 05-86-90-53-03</p>
+        </div>
+        <div class="form-card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">💬</div>
+          <h4 style="font-size:0.9rem;margin-bottom:0.3rem">WhatsApp</h4>
+          <p style="font-size:0.82rem;color:var(--muted)">+225 07-87-40-45-18</p>
+        </div>
+        <div class="form-card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:0.5rem">✉️</div>
+          <h4 style="font-size:0.9rem;margin-bottom:0.3rem">Email</h4>
+          <p style="font-size:0.82rem;color:var(--muted)">nextalpha@gmail.com</p>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.2rem">Envoyez-nous un message</h3>
+        <div class="form-grid">
+          <div class="form-group"><label>Nom</label><input type="text" placeholder="Votre nom"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"></div>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Votre message..."></textarea></div>
+        <button class="btn btn-primary" style="width:100%;padding:0.8rem;border-radius:8px">Envoyer le message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-login">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login')">✕</button>
+    <h3>Connexion</h3>
+    <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"></div>
+    <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="••••••••"></div>
+    <button class="btn btn-primary" style="width:100%;padding:0.8rem;border-radius:8px;margin-top:0.5rem">Se connecter</button>
+    <p style="text-align:center;font-size:0.82rem;margin-top:1rem;color:var(--muted)">Pas encore inscrit ? <a href="#" style="color:var(--orange);font-weight:600" onclick="closeModal('login');openModal('register')">Créer un compte</a></p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-register">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('register')">✕</button>
+    <h3>Créer un compte</h3>
+    <div class="form-grid">
+      <div class="form-group"><label>Prénom</label><input type="text" placeholder="Jean"></div>
+      <div class="form-group"><label>Nom</label><input type="text" placeholder="Kouassi"></div>
+    </div>
+    <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"></div>
+    <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="+225 07 00 00 00 00"></div>
+    <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="••••••••"></div>
+    <div style="margin-bottom:1rem"><label style="display:flex;align-items:flex-start;gap:8px;font-size:0.8rem;cursor:pointer"><input type="checkbox" style="margin-top:3px"> J'accepte les conditions d'utilisation de SeLogerChap</label></div>
+    <button class="btn btn-primary" style="width:100%;padding:0.8rem;border-radius:8px">Créer mon compte</button>
+  </div>
+</div>
+
+<script>
+const props=[
+  
+];
+
+function makeCard(p){
+  const badgeClass=p.type==='louer'?'badge-rent':p.type==='vendre'?'badge-sell':'badge-room';
+  const badgeText=p.type==='louer'?'À louer':p.type==='vendre'?'À vendre':'Studio/Chambre';
+  return `<div class="prop-card" onclick="openProp(${p.id})">
+    <div class="prop-img" style="background:${p.bg}">
+      <span style="font-size:3.5rem">${p.icon}</span>
+      <span class="prop-badge ${badgeClass}">${badgeText}</span>
+      ${p.new?'<span class="badge-new">Nouveau</span>':''}
+    </div>
+    <div class="prop-body">
+      <div class="prop-title">${p.title}</div>
+      <div class="prop-loc">📍 ${p.loc}</div>
+      <div class="prop-price">${p.price} FCFA <span>${p.unit}</span></div>
+      <div class="prop-features">
+        <span class="feat">🛏 ${p.rooms} pièce${p.rooms>1?'s':''}</span>
+        <span class="feat">🚿 ${p.bath} sdb</span>
+        <span class="feat">📐 ${p.area} m²</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderHome(){
+  document.getElementById('home-listings').innerHTML=props.slice(0,6).map(makeCard).join('');
+}
+
+let activeFilter='all';
+function renderListings(){
+  const filtered=activeFilter==='all'?props:props.filter(p=>p.type===activeFilter||p.zone===activeFilter);
+  document.getElementById('all-listings').innerHTML=filtered.map(makeCard).join('');
+  document.getElementById('result-count').textContent=`${filtered.length} annonce${filtered.length>1?'s':''} trouvée${filtered.length>1?'s':''}`;
+}
+
+document.getElementById('filter-chips').addEventListener('click',function(e){
+  if(e.target.classList.contains('filter-chip')){
+    document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+    e.target.classList.add('active');
+    activeFilter=e.target.dataset.filter;
+    renderListings();
+  }
+});
+
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const map={home:0,listings:1,publish:2,contact:3};
+  document.querySelectorAll('.nav-links a')[map[name]]?.classList.add('active');
+  window.scrollTo(0,0);
+  if(name==='listings')renderListings();
+}
+
+function filterAndGo(filter){
+  activeFilter=filter;
+  showPage('listings');
+  setTimeout(()=>{
+    document.querySelectorAll('.filter-chip').forEach(c=>{
+      c.classList.toggle('active',c.dataset.filter===filter);
+    });
+    renderListings();
+  },100);
+}
+
+function openProp(id){
+  const p=props.find(x=>x.id===id);
+  if(!p)return;
+  alert(`📞 Contacter pour : "${p.title}"\n📍 ${p.loc}\n💰 ${p.price} FCFA ${p.unit}\n\nAppelez ou écrit via WhatsApp le propriétaire pour visiter ce bien.`);
+}
+
+function openModal(name){document.getElementById('modal-'+name).classList.add('open');}
+function closeModal(name){document.getElementById('modal-'+name).classList.remove('open');}
+
+document.querySelectorAll('.modal-overlay').forEach(m=>{
+  m.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
+});
+
+function submitForm(){
+  document.getElementById('success-msg').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+renderHome();
+renderListings();
+</script>
