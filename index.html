@@ -427,4 +427,52 @@ function submitForm(){
 
 renderHome();
 renderListings();
+/* ── INSCRIPTION ── */
+function inscrireUtilisateur() {
+  const prenom = document.querySelector('#modal-register input[placeholder="Jean"]').value.trim();
+  const nom    = document.querySelector('#modal-register input[placeholder="Kouassi"]').value.trim();
+  const email  = document.querySelector('#modal-register input[type="email"]').value.trim();
+  const tel    = document.querySelector('#modal-register input[type="tel"]').value.trim();
+  const mdp    = document.querySelector('#modal-register input[type="password"]').value.trim();
+  const cgu    = document.querySelector('#modal-register input[type="checkbox"]').checked;
+
+  if (!prenom || !nom) {
+    alert('⚠️ Veuillez entrer votre prénom et nom.'); return;
+  }
+  if (!email || !email.includes('@')) {
+    alert('⚠️ Veuillez entrer une adresse email valide.'); return;
+  }
+  if (!tel) {
+    alert('⚠️ Veuillez entrer votre numéro de téléphone.'); return;
+  }
+  if (mdp.length < 6) {
+    alert('⚠️ Le mot de passe doit contenir au moins 6 caractères.'); return;
+  }
+  if (!cgu) {
+    alert('⚠️ Veuillez accepter les conditions d\'utilisation.'); return;
+  }
+
+  closeModal('register');
+  setTimeout(() => {
+    alert(`✅ Bienvenue ${prenom} ${nom} !\n\nVotre compte a été créé avec succès.\nVous pouvez maintenant publier vos annonces.`);
+  }, 200);
+}
+
+/* ── CONNEXION ── */
+function connecterUtilisateur() {
+  const email = document.querySelector('#modal-login input[type="email"]').value.trim();
+  const mdp   = document.querySelector('#modal-login input[type="password"]').value.trim();
+
+  if (!email || !email.includes('@')) {
+    alert('⚠️ Veuillez entrer votre adresse email.'); return;
+  }
+  if (!mdp) {
+    alert('⚠️ Veuillez entrer votre mot de passe.'); return;
+  }
+
+  closeModal('login');
+  setTimeout(() => {
+    alert(`✅ Connexion réussie !\n\nBienvenue sur SeLogerChap.`);
+  }, 200);
+}
 </script>
