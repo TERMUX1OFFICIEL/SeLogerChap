@@ -1,15 +1,16 @@
-<!-- =====================================================
+<!-- 
+ =====================================================
      SeLogerChap — HTML principal
      Dépendances : seloger.css + EmailJS CDN
-     ===================================================== -->
+     =====================================================
 
 <link rel="stylesheet" href="seloger.css">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 
-<!-- ═══════════════════════════════════════════════════
+ ═══════════════════════════════════════════════════
      NAVIGATION
-     ═══════════════════════════════════════════════════ -->
+     ══════════════════════════════════════════════════ 
 <nav>
   <div class="nav-inner">
     <div class="logo">SeLoger<span>Chap</span></div>
@@ -19,15 +20,17 @@
       <a href="#" onclick="showPage('publish')">Publier</a>
       <a href="#" onclick="showPage('contact')">Contact</a>
     </div>
-    <!-- Rempli dynamiquement par majNavAuth() -->
+    ============================================
+    <Rempli dynamiquement par majNavAuth() 
+     ===========================================
     <div style="display:flex;gap:0.5rem;align-items:center" id="nav-auth"></div>
   </div>
 </nav>
 
 
-<!-- ═══════════════════════════════════════════════════
+ ═══════════════════════════════════════════════════
      PAGE : ACCUEIL
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════ 
 <div id="page-home" class="page active">
   <div class="hero">
     <h1>
@@ -159,9 +162,9 @@
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════
+ ═══════════════════════════════════════════════════
      PAGE : ANNONCES
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════ 
 <div id="page-listings" class="page">
   <div class="section">
     <h2 class="section-title" style="margin-bottom:1.2rem">Toutes les annonces</h2>
@@ -181,9 +184,9 @@
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════
+<═══════════════════════════════════════════════════
      PAGE : PUBLIER UNE ANNONCE
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════
 <div id="page-publish" class="page">
   <div class="section">
     <div class="form-section">
@@ -302,9 +305,9 @@
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════
+ ═══════════════════════════════════════════════════
      PAGE : CONTACT
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════ -
 <div id="page-contact" class="page">
   <div class="section">
     <div class="form-section">
@@ -345,7 +348,7 @@
 
 <!-- ═══════════════════════════════════════════════════
      MODAL : CONNEXION
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════ 
 <div class="modal-overlay" id="modal-login">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('login')">✕</button>
@@ -358,7 +361,7 @@
       <label>Mot de passe</label>
       <input type="password" id="login-mdp" placeholder="••••••••">
     </div>
-    <!-- Div d'erreur pour la connexion -->
+    <!-- Div d'erreur pour la connexion 
     <div id="login-erreur"
       style="display:none;background:#FCEBEB;border:1px solid #E24B4A;border-radius:8px;
              padding:0.7rem 1rem;font-size:0.85rem;color:#A32D2D;margin-bottom:0.8rem">
@@ -379,12 +382,12 @@
 
 <!-- ═══════════════════════════════════════════════════
      MODAL : INSCRIPTION (2 étapes)
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════ 
 <div class="modal-overlay" id="modal-register">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('register')">✕</button>
 
-    <!-- Étape 1 : Formulaire -->
+    <!-- Étape 1 : Formulaire 
     <div id="etape-formulaire">
       <h3>Créer un compte</h3>
       <div class="form-grid">
@@ -427,7 +430,7 @@
       </button>
     </div>
 
-    <!-- Étape 2 : Vérification du code -->
+    <!-- Étape 2 : Vérification du code 
     <div id="etape-verification" style="display:none">
       <h3>Vérification</h3>
       <p id="verif-message" style="font-size:0.88rem;color:#6B6B6B;margin-bottom:1.5rem"></p>
@@ -458,7 +461,7 @@
 
 <!-- ═══════════════════════════════════════════════════
      SCRIPTS JAVASCRIPT
-     ═══════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════ 
 <script>
 
 /* ════════════════════════════════════════════════════
@@ -833,4 +836,1147 @@ majNavAuth();   // afficher l'état de connexion dès le chargement
 renderHome();
 renderListings();
 
+</script> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="SeLogerChap — La plateforme immobilière de référence en Côte d'Ivoire. Trouvez ou publiez votre annonce de logement.">
+  <title>SeLogerChap — Immobilier en Côte d'Ivoire</title>
+  <link rel="stylesheet" href="seloger.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION DESKTOP ═══ -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">SeLoger<span>Chap</span></div>
+    <div class="nav-links">
+      <a href="#" class="active" onclick="showPage('home')">Accueil</a>
+      <a href="#" onclick="showPage('listings')">Annonces</a>
+      <a href="#" onclick="showPage('publish')">Publier</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </div>
+    <div id="nav-auth" style="display:flex;gap:0.5rem;align-items:center"></div>
+  </div>
+</nav>
+
+<!-- ═══ PAGE : ACCUEIL ═══ -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <h1>Trouvez votre logement idéal<br><span>en Côte d'Ivoire</span></h1>
+    <p>Appartements, maisons, studios — SeLogerChap, votre plateforme immobilière de confiance</p>
+
+    <div class="search-box">
+      <div class="search-field">
+        <select id="s-type" style="flex:1;min-width:110px">
+          <option value="">Type de bien</option>
+          <option value="louer">Appartement</option>
+          <option value="vendre">Maison</option>
+          <option value="studio">Studio</option>
+        </select>
+      </div>
+      <div class="divider"></div>
+      <div class="search-field" style="flex:2">
+        <input type="text" id="s-lieu" placeholder="Commune, quartier... (ex: Cocody)" style="flex:1"/>
+      </div>
+      <div class="divider"></div>
+      <div class="price-filter-row">
+        <input type="number" id="s-min" placeholder="Prix min" min="0">
+        <span>—</span>
+        <input type="number" id="s-max" placeholder="Prix max" min="0">
+        <span style="font-size:0.7rem;color:var(--muted)">FCFA</span>
+      </div>
+      <button class="btn btn-primary" style="border-radius:40px;padding:0.55rem 1.2rem" onclick="lancerRecherche()">🔍 Chercher</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><strong id="stat-annonces">0+</strong><span>Annonces actives</span></div>
+      <div class="stat"><strong>18</strong><span>Communes couvertes</span></div>
+      <div class="stat"><strong id="stat-users">0+</strong><span>Utilisateurs inscrits</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><h2 class="section-title">Parcourir par catégorie</h2></div>
+    <div class="cat-grid">
+      <div class="cat-card orange" onclick="filterAndGo('louer')">
+        <div class="cat-icon o">🏢</div>
+        <div><h4>Appartements à louer</h4><p id="count-louer">0 annonces</p></div>
+      </div>
+      <div class="cat-card green" onclick="filterAndGo('vendre')">
+        <div class="cat-icon g">🏠</div>
+        <div><h4>Maisons à vendre</h4><p id="count-vendre">0 annonces</p></div>
+      </div>
+      <div class="cat-card blue" onclick="filterAndGo('studio')">
+        <div class="cat-icon b">🛏</div>
+        <div><h4>Studios & Chambres</h4><p id="count-studio">0 annonces</p></div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Annonces récentes</h2>
+      <a href="#" style="font-size:0.82rem;color:var(--orange);font-weight:600" onclick="showPage('listings')">Voir tout →</a>
+    </div>
+    <div class="listings-grid" id="home-listings"></div>
+
+    <div class="owner-banner">
+      <div>
+        <h3>Vous êtes propriétaire ou bailleur ?</h3>
+        <p>Publiez votre annonce et touchez des milliers de locataires et acheteurs potentiels en Côte d'Ivoire. C'est gratuit !</p>
+        <button class="btn" style="background:#F4A05A;color:#fff;margin-top:1rem;font-weight:700" onclick="showPage('publish')">Publier une annonce gratuite</button>
+      </div>
+      <div style="font-size:5rem;opacity:0.25">🏡</div>
+    </div>
+
+    <div class="section-header" style="margin-top:1.5rem"><h2 class="section-title">Comment ça marche ?</h2></div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><h4>Recherchez</h4><p>Utilisez nos filtres avancés pour trouver le logement qui correspond à votre budget et vos critères.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h4>Contactez</h4><p>Contactez directement le propriétaire par appel, WhatsApp ou message via la plateforme.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h4>Emménagez</h4><p>Visitez le bien, signez le contrat et installez-vous dans votre nouveau chez-vous !</p></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">SeLoger<span>Chap</span></div>
+          <p class="footer-desc">La plateforme immobilière de référence en Côte d'Ivoire. Trouvez ou publiez votre annonce rapidement et en toute sécurité.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('listings')">Annonces</a>
+          <a href="#" onclick="showPage('publish')">Publier une annonce</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Villes populaires</h5>
+          <a href="#">Abidjan - Cocody</a>
+          <a href="#">Abidjan - Yopougon</a>
+          <a href="#">Abidjan - Marcory</a>
+          <a href="#">Bouaké</a>
+          <a href="#">San-Pédro</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 SeLogerChap — Développé par l'entreprise NEXT ALPHA · Tous droits réservés</span>
+        <span>Made with ❤️ en Côte d'Ivoire 🇨🇮</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══ PAGE : ANNONCES ═══ -->
+<div id="page-listings" class="page">
+  <div class="section">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem">
+      <h2 class="section-title">Toutes les annonces</h2>
+      <div style="display:flex;align-items:center;gap:0.5rem">
+        <input type="number" id="f-min" placeholder="Prix min FCFA" style="border:1.5px solid var(--border);border-radius:8px;padding:0.4rem 0.6rem;font-size:0.8rem;width:120px;outline:none" oninput="renderListings()">
+        <span style="font-size:0.8rem;color:var(--muted)">—</span>
+        <input type="number" id="f-max" placeholder="Prix max FCFA" style="border:1.5px solid var(--border);border-radius:8px;padding:0.4rem 0.6rem;font-size:0.8rem;width:120px;outline:none" oninput="renderListings()">
+      </div>
+    </div>
+    <div class="filters" id="filter-chips">
+      <button class="filter-chip active" data-filter="all">Tous</button>
+      <button class="filter-chip" data-filter="louer">À louer</button>
+      <button class="filter-chip" data-filter="vendre">À vendre</button>
+      <button class="filter-chip" data-filter="studio">Studios</button>
+      <button class="filter-chip" data-filter="cocody">Cocody</button>
+      <button class="filter-chip" data-filter="yopougon">Yopougon</button>
+      <button class="filter-chip" data-filter="marcory">Marcory</button>
+      <button class="filter-chip" data-filter="plateau">Plateau</button>
+    </div>
+    <p id="result-count" style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem"></p>
+    <div class="listings-grid" id="all-listings"></div>
+  </div>
+</div>
+
+<!-- ═══ PAGE : PUBLIER ═══ -->
+<div id="page-publish" class="page">
+  <div class="section">
+    <div class="form-section">
+      <h2 class="section-title" style="margin-bottom:0.25rem">Publier une annonce</h2>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.2rem">Remplissez les informations ci-dessous. Votre annonce sera visible après validation.</p>
+
+      <div class="success-banner" id="success-msg">
+        <span style="font-size:1.2rem">✅</span>
+        <p>Votre annonce a été soumise avec succès ! Elle sera publiée après validation.</p>
+      </div>
+
+      <!-- Infos du bien -->
+      <div class="form-card">
+        <h3 style="color:var(--orange)">📋 Informations du bien</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Type de transaction *</label>
+            <select id="pub-type-tx"><option value="louer">À louer</option><option value="vendre">À vendre</option></select>
+          </div>
+          <div class="form-group">
+            <label>Type de bien *</label>
+            <select id="pub-type-bien"><option value="appartement">Appartement</option><option value="maison">Maison</option><option value="studio">Studio</option><option value="chambre">Chambre</option></select>
+          </div>
+        </div>
+        <div class="form-group"><label>Titre de l'annonce *</label><input type="text" id="pub-titre" placeholder="Ex: Bel appartement F3 meublé à Cocody Riviera" maxlength="120"></div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Commune / Ville *</label>
+            <div class="autocomplete-wrap">
+              <input type="text" id="commune-input" placeholder="Tapez ou choisissez... ex: Cocody" autocomplete="off"/>
+              <div class="ac-dropdown" id="ac-dropdown"></div>
+            </div>
+            <div id="commune-tag-wrap"></div>
+            <span style="font-size:0.73rem;color:var(--muted);margin-top:3px;display:block">Abidjan, Bouaké, San-Pédro — ou toute autre ville de CI</span>
+          </div>
+          <div class="form-group"><label>Quartier *</label><input type="text" id="pub-quartier" placeholder="Ex: Riviera 2, Angré, II Plateaux"></div>
+        </div>
+        <div class="form-group"><label>Description *</label><textarea id="pub-desc" placeholder="Décrivez votre bien : superficie, état, équipements, accès transport, sécurité..." maxlength="1000"></textarea></div>
+      </div>
+
+      <!-- Prix & Caractéristiques -->
+      <div class="form-card">
+        <h3 style="color:var(--orange)">💰 Prix & Caractéristiques</h3>
+        <div class="form-grid">
+          <div class="form-group"><label>Prix (FCFA) *</label><input type="number" id="pub-prix" placeholder="Ex: 150000" min="0"></div>
+          <div class="form-group"><label>Superficie (m²)</label><input type="number" id="pub-superficie" placeholder="Ex: 80" min="0"></div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group"><label>Nombre de pièces</label><select id="pub-pieces"><option>Studio</option><option>F2</option><option>F3</option><option>F4</option><option>F5+</option></select></div>
+          <div class="form-group"><label>Salles de bain</label><select id="pub-sdb"><option>1</option><option>2</option><option>3+</option></select></div>
+        </div>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem">
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Meublé"> Meublé</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Climatisé"> Climatisé</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Groupe élec."> Groupe électrogène</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Gardien"> Gardien</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Parking"> Parking</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Eau courante"> Eau courante</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Wifi"> Wifi</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:0.82rem;cursor:pointer"><input type="checkbox" class="equip" value="Piscine"> Piscine</label>
+        </div>
+      </div>
+
+      <!-- Photos -->
+      <div class="form-card">
+        <h3 style="color:var(--orange)">📸 Photos du bien</h3>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">Ajoutez jusqu'à 5 photos. Plus il y a de photos, plus vite votre annonce sera consultée !</p>
+        <div class="photo-upload-area">
+          <div class="upload-icon">📷</div>
+          <p>Glissez vos photos ici ou choisissez une option</p>
+          <div class="upload-btns">
+            <label class="upload-btn">
+              🖼️ Galerie / Fichier
+              <input type="file" id="photo-galerie" accept="image/*" multiple onchange="ajouterPhotos(this.files)">
+            </label>
+            <label class="upload-btn">
+              📷 Prendre une photo
+              <input type="file" id="photo-camera" accept="image/*" capture="environment" onchange="ajouterPhotos(this.files)">
+            </label>
+          </div>
+          <p style="font-size:0.72rem;color:var(--muted);margin-top:0.5rem">JPG, PNG · Max 5 photos · 5 MB chacune</p>
+        </div>
+        <div class="photo-previews" id="photo-previews"></div>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="form-card">
+        <h3 style="color:var(--orange)">📞 Vos coordonnées</h3>
+        <div class="form-grid">
+          <div class="form-group"><label>Nom complet *</label><input type="text" id="pub-nom" placeholder="Votre nom complet"></div>
+          <div class="form-group"><label>Téléphone / WhatsApp *</label><input type="tel" id="pub-tel" placeholder="+225 07 XX XX XX XX"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" id="pub-email" placeholder="votre@email.com"></div>
+        <div style="display:flex;gap:1.2rem;margin-top:0.5rem;flex-wrap:wrap">
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="radio" name="owner_type" value="proprio" checked> Propriétaire direct</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;cursor:pointer"><input type="radio" name="owner_type" value="agence"> Agence immobilière</label>
+        </div>
+      </div>
+
+      <div id="pub-erreur" class="alert-box alert-danger" style="margin-top:1rem"></div>
+      <button class="btn btn-primary btn-block" style="margin-top:1rem;border-radius:10px;font-size:1rem" onclick="publierAnnonce()">
+        Publier mon annonce gratuitement ✓
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE : CONTACT ═══ -->
+<div id="page-contact" class="page">
+  <div class="section">
+    <div class="form-section">
+      <h2 class="section-title" style="margin-bottom:0.25rem">Nous contacter</h2>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem">Une question ? Un problème ? Nous sommes là 24h/24, 7j/7.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem">
+        <div class="form-card" style="text-align:center;margin-top:0">
+          <div style="font-size:2rem;margin-bottom:0.5rem">📞</div>
+          <h4 style="font-size:0.88rem;margin-bottom:0.25rem">Téléphone</h4>
+          <p style="font-size:0.8rem;color:var(--muted)">+225 05-86-90-53-03</p>
+        </div>
+        <div class="form-card" style="text-align:center;margin-top:0">
+          <div style="font-size:2rem;margin-bottom:0.5rem">💬</div>
+          <h4 style="font-size:0.88rem;margin-bottom:0.25rem">WhatsApp</h4>
+          <p style="font-size:0.8rem;color:var(--muted)">+225 07-87-40-45-18</p>
+        </div>
+        <div class="form-card" style="text-align:center;margin-top:0">
+          <div style="font-size:2rem;margin-bottom:0.5rem">✉️</div>
+          <h4 style="font-size:0.88rem;margin-bottom:0.25rem">Email</h4>
+          <p style="font-size:0.8rem;color:var(--muted)">nextalpha@gmail.com</p>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">Envoyez-nous un message</h3>
+        <div class="form-grid">
+          <div class="form-group"><label>Nom</label><input type="text" id="ct-nom" placeholder="Votre nom"></div>
+          <div class="form-group"><label>Email</label><input type="email" id="ct-email" placeholder="votre@email.com"></div>
+        </div>
+        <div class="form-group"><label>Message</label><textarea id="ct-msg" placeholder="Votre message..."></textarea></div>
+        <div id="ct-ok" class="alert-box alert-success" style="margin-bottom:0.5rem"></div>
+        <button class="btn btn-primary btn-block" onclick="envoyerMessage()">Envoyer le message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL : CONNEXION ═══ -->
+<div class="modal-overlay" id="modal-login">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login')">✕</button>
+    <h3>🔐 Connexion</h3>
+    <div class="security-badge">🔒 Connexion sécurisée SSL</div>
+    <div class="form-group"><label>Email</label><input type="email" id="login-email" placeholder="votre@email.com" autocomplete="email"></div>
+    <div class="form-group">
+      <label>Mot de passe</label>
+      <div style="position:relative">
+        <input type="password" id="login-mdp" placeholder="••••••••" autocomplete="current-password" style="padding-right:2.5rem">
+        <button type="button" onclick="togglePwd('login-mdp',this)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem">👁</button>
+      </div>
+    </div>
+    <div id="login-erreur" class="alert-box alert-danger"></div>
+    <button class="btn btn-primary btn-block" id="btn-login" onclick="connecterUtilisateur()">Se connecter</button>
+    <p style="text-align:center;font-size:0.82rem;margin-top:1rem;color:var(--muted)">
+      Pas encore inscrit ? <a href="#" style="color:var(--orange);font-weight:600" onclick="closeModal('login');openModal('register')">Créer un compte</a>
+    </p>
+  </div>
+</div>
+
+<!-- ═══ MODAL : INSCRIPTION (2 étapes) ═══ -->
+<div class="modal-overlay" id="modal-register">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('register')">✕</button>
+
+    <!-- Étape 1 -->
+    <div id="etape-formulaire">
+      <h3>✨ Créer un compte</h3>
+      <div class="security-badge">🔒 Vos données sont protégées</div>
+      <div class="form-grid">
+        <div class="form-group"><label>Prénom *</label><input type="text" id="reg-prenom" placeholder="Jean" autocomplete="given-name"></div>
+        <div class="form-group"><label>Nom *</label><input type="text" id="reg-nom" placeholder="Kouassi" autocomplete="family-name"></div>
+      </div>
+      <div class="form-group"><label>Email *</label><input type="email" id="reg-email" placeholder="votre@email.com" autocomplete="email"></div>
+      <div class="form-group"><label>Téléphone *</label><input type="tel" id="reg-tel" placeholder="+225 07 00 00 00 00" autocomplete="tel"></div>
+      <div class="form-group">
+        <label>Mot de passe * (min. 8 caractères)</label>
+        <div style="position:relative">
+          <input type="password" id="reg-mdp" placeholder="••••••••" autocomplete="new-password" oninput="evaluerMdp(this.value)" style="padding-right:2.5rem">
+          <button type="button" onclick="togglePwd('reg-mdp',this)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem">👁</button>
+        </div>
+        <div class="pwd-strength">
+          <div class="pwd-bar"><div class="pwd-bar-fill" id="pwd-bar-fill"></div></div>
+          <span class="pwd-label" id="pwd-label">Entrez un mot de passe</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Confirmer le mot de passe *</label>
+        <input type="password" id="reg-mdp2" placeholder="••••••••" autocomplete="new-password">
+      </div>
+      <div style="margin-bottom:0.8rem">
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:0.83rem;cursor:pointer;line-height:1.4">
+          <input type="checkbox" id="reg-cgu" style="margin-top:3px;flex-shrink:0">
+          J'accepte les <a href="#" style="color:var(--orange)">conditions d'utilisation</a> et la <a href="#" style="color:var(--orange)">politique de confidentialité</a> de SeLogerChap
+        </label>
+      </div>
+      <div id="reg-erreur" class="alert-box alert-danger"></div>
+      <p style="font-size:0.83rem;color:var(--muted);margin-bottom:0.6rem">Recevoir le code de vérification par :</p>
+      <div style="display:flex;gap:0.75rem;margin-bottom:1rem">
+        <label class="verif-method-label"><input type="radio" name="verif_methode" value="email" checked> ✉️ Email</label>
+        <label class="verif-method-label"><input type="radio" name="verif_methode" value="sms"> 📱 SMS</label>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" id="btn-envoyer-code" onclick="envoyerCode()">
+        Envoyer le code de vérification →
+      </button>
+    </div>
+
+    <!-- Étape 2 -->
+    <div id="etape-verification" style="display:none">
+      <h3>📩 Vérification</h3>
+      <p id="verif-message" style="font-size:0.88rem;color:var(--muted);margin-bottom:1.2rem"></p>
+      <div class="form-group">
+        <label>Code à 6 chiffres *</label>
+        <input type="text" id="code-saisi" maxlength="6" placeholder="_ _ _ _ _ _" class="verif-code-input" inputmode="numeric" pattern="[0-9]*">
+      </div>
+      <div id="code-erreur" class="alert-box alert-danger"></div>
+      <button type="button" class="btn btn-primary btn-block" onclick="verifierCode()" style="margin-bottom:0.7rem">Valider mon compte ✓</button>
+      <button type="button" onclick="retourFormulaire()" style="width:100%;padding:0.6rem;border-radius:8px;border:1.5px solid var(--border);background:#fff;cursor:pointer;font-size:0.83rem;color:var(--muted)">
+        ← Modifier mes informations
+      </button>
+      <div class="resend-timer" id="resend-zone" style="margin-top:0.75rem">
+        <span id="resend-msg">Pas reçu ? </span>
+        <a href="#" id="resend-btn" style="color:var(--orange);font-weight:600;display:none" onclick="renvoyerCode()">Renvoyer le code</a>
+        <span id="resend-countdown"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ NAVIGATION BAS — MOBILE ═══ -->
+<nav class="mobile-nav">
+  <div class="mobile-nav-items">
+    <button class="mobile-nav-item active" onclick="showPage('home')" id="mnav-home">
+      <span class="nav-icon">🏠</span>Accueil
+    </button>
+    <button class="mobile-nav-item" onclick="showPage('listings')" id="mnav-listings">
+      <span class="nav-icon">🔍</span>Annonces
+    </button>
+    <button class="mobile-nav-item" onclick="showPage('publish')" id="mnav-publish">
+      <span class="nav-icon">➕</span>Publier
+    </button>
+    <button class="mobile-nav-item" onclick="showPage('contact')" id="mnav-contact">
+      <span class="nav-icon">💬</span>Contact
+    </button>
+    <button class="mobile-nav-item" onclick="ouvrirCompte()" id="mnav-compte">
+      <span class="nav-icon">👤</span>Compte
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────
+   1. EMAILJS
+───────────────────────────────────────── */
+var EJS_KEY  = '4EnEMAc7LUSwwyJm0Z';
+var EJS_SVC  = 'service_q77l9jk';
+var EJS_TPL  = 'template_verification';
+emailjs.init(EJS_KEY);
+
+/* ─────────────────────────────────────────
+   2. SÉCURITÉ — Hachage SHA-256
+───────────────────────────────────────── */
+async function sha256(str) {
+  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+}
+
+/* ─────────────────────────────────────────
+   3. DONNÉES — Annonces en mémoire
+───────────────────────────────────────── */
+var props = [];
+// Ajouter vos annonces ici ex:
+// { id:1, title:"App F3 meublé", loc:"Cocody Riviera 2", price:180000,
+//   unit:"/ mois", type:"louer", zone:"cocody", bg:"#E8F4E8",
+//   icon:"🏢", rooms:3, bath:2, area:90, new:true, photos:[] }
+
+/* ─────────────────────────────────────────
+   4. COMPTES & SESSION (localStorage)
+───────────────────────────────────────── */
+var SESSION_KEY  = 'slc_session';
+var COMPTES_KEY  = 'slc_comptes';
+var MAX_ATTEMPTS = 5;   // tentatives max avant blocage
+var BLOCK_MINUTES = 15; // durée de blocage
+
+function getComptes(){ try{ return JSON.parse(localStorage.getItem(COMPTES_KEY)||'{}'); }catch(e){ return {}; } }
+function saveComptes(c){ localStorage.setItem(COMPTES_KEY, JSON.stringify(c)); }
+function getSession(){ try{ return JSON.parse(localStorage.getItem(SESSION_KEY)||'null'); }catch(e){ return null; } }
+function saveSession(u){ localStorage.setItem(SESSION_KEY, JSON.stringify(u)); }
+function deleteSession(){ localStorage.removeItem(SESSION_KEY); }
+
+function majNavAuth() {
+  var s = getSession();
+  var nav = document.getElementById('nav-auth');
+  var comptes = getComptes();
+  var nbUsers = Object.keys(comptes).length;
+  document.getElementById('stat-users').textContent = nbUsers + '+';
+  if (s) {
+    nav.innerHTML =
+      '<span class="nav-user-info">Bonjour, <strong>' + sanitize(s.prenom) + '</strong></span>' +
+      '<button class="btn btn-outline" onclick="seDeconnecter()">Déconnexion</button>';
+  } else {
+    nav.innerHTML =
+      '<button class="btn btn-outline" onclick="openModal(\'login\')">Connexion</button>' +
+      '<button class="btn btn-primary" onclick="openModal(\'register\')">S\'inscrire</button>';
+  }
+}
+
+function ouvrirCompte() {
+  var s = getSession();
+  if (s) { if(confirm('Bonjour ' + s.prenom + ' !\n\nVoulez-vous vous déconnecter ?')) seDeconnecter(); }
+  else openModal('login');
+}
+
+/* ─────────────────────────────────────────
+   5. SÉCURITÉ — Helpers
+───────────────────────────────────────── */
+function sanitize(str) {
+  var d = document.createElement('div');
+  d.textContent = String(str || '');
+  return d.innerHTML;
+}
+
+function validerEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+}
+
+function validerTel(tel) {
+  return /^[\+]?[\d\s\-]{8,15}$/.test(tel);
+}
+
+// Évaluer la force du mot de passe
+function evaluerMdp(val) {
+  var fill = document.getElementById('pwd-bar-fill');
+  var label = document.getElementById('pwd-label');
+  var score = 0;
+  if (val.length >= 8) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+  var configs = [
+    {w:'0%',   color:'transparent', txt:''},
+    {w:'25%',  color:'#E24B4A',     txt:'Faible'},
+    {w:'50%',  color:'#F59E0B',     txt:'Moyen'},
+    {w:'75%',  color:'#3B82F6',     txt:'Bon'},
+    {w:'100%', color:'#16A34A',     txt:'Excellent'},
+  ];
+  var c = configs[score];
+  fill.style.width = c.w;
+  fill.style.background = c.color;
+  label.textContent = c.txt;
+  label.style.color = c.color;
+}
+
+function togglePwd(id, btn) {
+  var inp = document.getElementById(id);
+  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = '🙈'; }
+  else { inp.type = 'password'; btn.textContent = '👁'; }
+}
+
+function showAlert(id, msg, type) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'alert-box ' + (type||'alert-danger');
+  el.classList.add('show');
+}
+function hideAlert(id) {
+  var el = document.getElementById(id);
+  if (el) { el.className = 'alert-box'; el.classList.remove('show'); }
+}
+
+/* ─────────────────────────────────────────
+   6. INSCRIPTION — Variables
+───────────────────────────────────────── */
+var codeGenere = '';
+var donneesUser = {};
+var resendTimer = null;
+
+/* ─────────────────────────────────────────
+   7. INSCRIPTION — Étape 1
+───────────────────────────────────────── */
+function envoyerCode() {
+  var prenom  = document.getElementById('reg-prenom').value.trim();
+  var nom     = document.getElementById('reg-nom').value.trim();
+  var email   = document.getElementById('reg-email').value.trim().toLowerCase();
+  var tel     = document.getElementById('reg-tel').value.trim();
+  var mdp     = document.getElementById('reg-mdp').value;
+  var mdp2    = document.getElementById('reg-mdp2').value;
+  var cgu     = document.getElementById('reg-cgu').checked;
+  var methode = document.querySelector('input[name="verif_methode"]:checked').value;
+  hideAlert('reg-erreur');
+
+  if (!prenom || !nom)           { showAlert('reg-erreur','⚠️ Veuillez entrer votre prénom et nom.'); return; }
+  if (prenom.length < 2 || nom.length < 2) { showAlert('reg-erreur','⚠️ Prénom et nom trop courts.'); return; }
+  if (!validerEmail(email))      { showAlert('reg-erreur','⚠️ Adresse email invalide.'); return; }
+  if (!validerTel(tel))          { showAlert('reg-erreur','⚠️ Numéro de téléphone invalide.'); return; }
+  if (mdp.length < 8)            { showAlert('reg-erreur','⚠️ Le mot de passe doit contenir au moins 8 caractères.'); return; }
+  if (mdp !== mdp2)              { showAlert('reg-erreur','⚠️ Les mots de passe ne correspondent pas.'); return; }
+  if (!cgu)                      { showAlert('reg-erreur','⚠️ Veuillez accepter les conditions d\'utilisation.'); return; }
+
+  var comptes = getComptes();
+  if (comptes[email])            { showAlert('reg-erreur','⚠️ Un compte existe déjà avec cet email. Connectez-vous.'); return; }
+
+  donneesUser = { prenom:prenom, nom:nom, email:email, tel:tel, mdp:mdp };
+  codeGenere = Math.floor(100000 + Math.random()*900000).toString();
+
+  var btn = document.getElementById('btn-envoyer-code');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Envoi en cours...';
+
+  if (methode === 'email') {
+    emailjs.send(EJS_SVC, EJS_TPL, {
+      to_name:  prenom + ' ' + nom,
+      to_email: email,
+      code:     codeGenere,
+      app_name: 'SeLogerChap'
+    }).then(function() {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer le code de vérification →';
+      afficherVerif('email', email);
+    }, function(err) {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer le code de vérification →';
+      showAlert('reg-erreur', '⚠️ Erreur envoi email. Vérifiez votre configuration EmailJS. (' + (err.text||'') + ')');
+    });
+  } else {
+    btn.disabled = false;
+    btn.textContent = 'Envoyer le code de vérification →';
+    alert('📱 Mode développement SMS\nCode : ' + codeGenere + '\n\n(Intégrez AfricasTalking pour les vrais SMS)');
+    afficherVerif('sms', tel);
+  }
+}
+
+function afficherVerif(methode, dest) {
+  document.getElementById('etape-formulaire').style.display = 'none';
+  document.getElementById('etape-verification').style.display = 'block';
+  document.getElementById('verif-message').innerHTML =
+    methode === 'email'
+      ? '📧 Un code à 6 chiffres a été envoyé à <strong>' + sanitize(dest) + '</strong>. Vérifiez aussi vos spams.'
+      : '📱 Code envoyé au <strong>' + sanitize(dest) + '</strong>.';
+  demarrerTimer();
+}
+
+function demarrerTimer() {
+  var sec = 60;
+  var cd = document.getElementById('resend-countdown');
+  var btn = document.getElementById('resend-btn');
+  btn.style.display = 'none';
+  if (resendTimer) clearInterval(resendTimer);
+  resendTimer = setInterval(function() {
+    sec--;
+    cd.textContent = ' (' + sec + 's)';
+    if (sec <= 0) {
+      clearInterval(resendTimer);
+      cd.textContent = '';
+      btn.style.display = 'inline';
+    }
+  }, 1000);
+}
+
+/* ─────────────────────────────────────────
+   8. INSCRIPTION — Étape 2
+───────────────────────────────────────── */
+function verifierCode() {
+  var code = document.getElementById('code-saisi').value.trim();
+  hideAlert('code-erreur');
+  if (!code) { showAlert('code-erreur','⚠️ Veuillez entrer le code reçu.'); return; }
+  if (code !== codeGenere) { showAlert('code-erreur','❌ Code incorrect. Réessayez.'); return; }
+
+  sha256(donneesUser.mdp + donneesUser.email).then(function(hash) {
+    var comptes = getComptes();
+    comptes[donneesUser.email] = {
+      prenom: donneesUser.prenom,
+      nom:    donneesUser.nom,
+      tel:    donneesUser.tel,
+      hash:   hash,
+      created: new Date().toISOString()
+    };
+    saveComptes(comptes);
+    saveSession({ prenom:donneesUser.prenom, nom:donneesUser.nom, email:donneesUser.email });
+
+    closeModal('register');
+    reinitModalInscription();
+    codeGenere = '';
+    donneesUser = {};
+    majNavAuth();
+    setTimeout(function() {
+      alert('✅ Bienvenue ' + comptes[donneesUser.email]? '' : '' + ' !\n\nVotre compte a été créé et vérifié avec succès.\nVous êtes maintenant connecté(e).');
+    }, 250);
+  });
+}
+
+function renvoyerCode() {
+  codeGenere = Math.floor(100000 + Math.random()*900000).toString();
+  emailjs.send(EJS_SVC, EJS_TPL, {
+    to_name:  donneesUser.prenom + ' ' + donneesUser.nom,
+    to_email: donneesUser.email,
+    code:     codeGenere,
+    app_name: 'SeLogerChap'
+  }).then(function() {
+    alert('✅ Nouveau code envoyé à ' + donneesUser.email);
+    demarrerTimer();
+  }, function() {
+    alert('⚠️ Erreur lors du renvoi. Vérifiez votre connexion.');
+  });
+}
+
+function retourFormulaire() {
+  document.getElementById('etape-formulaire').style.display = 'block';
+  document.getElementById('etape-verification').style.display = 'none';
+  hideAlert('code-erreur');
+  if (resendTimer) clearInterval(resendTimer);
+}
+
+function reinitModalInscription() {
+  document.getElementById('etape-formulaire').style.display = 'block';
+  document.getElementById('etape-verification').style.display = 'none';
+  document.getElementById('code-saisi').value = '';
+  document.getElementById('reg-prenom').value = '';
+  document.getElementById('reg-nom').value = '';
+  document.getElementById('reg-email').value = '';
+  document.getElementById('reg-tel').value = '';
+  document.getElementById('reg-mdp').value = '';
+  document.getElementById('reg-mdp2').value = '';
+  document.getElementById('reg-cgu').checked = false;
+  hideAlert('reg-erreur');
+  hideAlert('code-erreur');
+}
+
+/* ─────────────────────────────────────────
+   9. CONNEXION — avec protection anti-bruteforce
+───────────────────────────────────────── */
+function connecterUtilisateur() {
+  var email = document.getElementById('login-email').value.trim().toLowerCase();
+  var mdp   = document.getElementById('login-mdp').value;
+  hideAlert('login-erreur');
+
+  if (!validerEmail(email)) { showAlert('login-erreur','⚠️ Email invalide.'); return; }
+  if (!mdp)                 { showAlert('login-erreur','⚠️ Entrez votre mot de passe.'); return; }
+
+  var comptes = getComptes();
+  var compte  = comptes[email];
+
+  if (!compte) { showAlert('login-erreur','❌ Aucun compte avec cet email. Inscrivez-vous d\'abord.'); return; }
+
+  // Anti-bruteforce
+  var now = Date.now();
+  if (compte.blockedUntil && now < compte.blockedUntil) {
+    var reste = Math.ceil((compte.blockedUntil - now) / 60000);
+    showAlert('login-erreur','🔒 Compte temporairement bloqué. Réessayez dans ' + reste + ' minute(s).');
+    return;
+  }
+
+  var btn = document.getElementById('btn-login');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>';
+
+  sha256(mdp + email).then(function(hash) {
+    btn.disabled = false;
+    btn.textContent = 'Se connecter';
+
+    if (compte.hash !== hash) {
+      compte.attempts = (compte.attempts || 0) + 1;
+      var restants = MAX_ATTEMPTS - compte.attempts;
+      if (compte.attempts >= MAX_ATTEMPTS) {
+        compte.blockedUntil = Date.now() + BLOCK_MINUTES * 60000;
+        compte.attempts = 0;
+        showAlert('login-erreur','🔒 Trop de tentatives. Compte bloqué ' + BLOCK_MINUTES + ' minutes.');
+      } else {
+        showAlert('login-erreur','❌ Mot de passe incorrect. ' + restants + ' tentative(s) restante(s).');
+      }
+      saveComptes(comptes);
+      return;
+    }
+
+    // Succès — réinitialiser les tentatives
+    compte.attempts = 0;
+    delete compte.blockedUntil;
+    compte.lastLogin = new Date().toISOString();
+    saveComptes(comptes);
+
+    saveSession({ prenom:compte.prenom, nom:compte.nom, email:email });
+    document.getElementById('login-email').value = '';
+    document.getElementById('login-mdp').value = '';
+    closeModal('login');
+    majNavAuth();
+    setTimeout(function() {
+      alert('✅ Connexion réussie !\n\nBienvenue ' + compte.prenom + ' ' + compte.nom + ' 👋');
+    }, 200);
+  });
+}
+
+function seDeconnecter() {
+  if (!confirm('Voulez-vous vraiment vous déconnecter ?')) return;
+  deleteSession();
+  majNavAuth();
+}
+
+/* ─────────────────────────────────────────
+   10. PHOTOS — Upload + aperçu
+───────────────────────────────────────── */
+var photosSelectionnees = [];
+
+function ajouterPhotos(files) {
+  var MAX = 5;
+  var MAX_SIZE = 5 * 1024 * 1024;
+  Array.from(files).forEach(function(file) {
+    if (photosSelectionnees.length >= MAX) {
+      alert('Maximum ' + MAX + ' photos autorisées.'); return;
+    }
+    if (!file.type.startsWith('image/')) {
+      alert('Fichier non supporté : ' + file.name + '. Utilisez JPG ou PNG.'); return;
+    }
+    if (file.size > MAX_SIZE) {
+      alert('Photo trop lourde : ' + file.name + '. Maximum 5MB par photo.'); return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      photosSelectionnees.push({ name: file.name, data: e.target.result });
+      afficherPreviews();
+    };
+    reader.readAsDataURL(file);
+  });
+  // Réinitialiser les inputs pour permettre de sélectionner à nouveau
+  document.getElementById('photo-galerie').value = '';
+  document.getElementById('photo-camera').value = '';
+}
+
+function afficherPreviews() {
+  var zone = document.getElementById('photo-previews');
+  zone.innerHTML = photosSelectionnees.map(function(p, i) {
+    return '<div class="photo-preview-item">' +
+      '<img src="' + p.data + '" alt="Photo ' + (i+1) + '">' +
+      '<button class="rm-photo" onclick="supprimerPhoto(' + i + ')">×</button>' +
+    '</div>';
+  }).join('');
+}
+
+function supprimerPhoto(index) {
+  photosSelectionnees.splice(index, 1);
+  afficherPreviews();
+}
+
+/* ─────────────────────────────────────────
+   11. PUBLICATION ANNONCE
+───────────────────────────────────────── */
+function publierAnnonce() {
+  var session = getSession();
+  if (!session) {
+    alert('⚠️ Vous devez être connecté pour publier une annonce.');
+    openModal('login'); return;
+  }
+
+  var titre     = document.getElementById('pub-titre').value.trim();
+  var commune   = document.getElementById('commune-input').value.trim();
+  var quartier  = document.getElementById('pub-quartier').value.trim();
+  var desc      = document.getElementById('pub-desc').value.trim();
+  var prix      = document.getElementById('pub-prix').value;
+  var nom       = document.getElementById('pub-nom').value.trim();
+  var tel       = document.getElementById('pub-tel').value.trim();
+  hideAlert('pub-erreur');
+
+  if (!titre)   { showAlert('pub-erreur','⚠️ Veuillez entrer un titre pour votre annonce.'); return; }
+  if (!commune) { showAlert('pub-erreur','⚠️ Veuillez indiquer la commune ou ville.'); return; }
+  if (!desc)    { showAlert('pub-erreur','⚠️ Veuillez décrire votre bien.'); return; }
+  if (!prix || parseInt(prix) <= 0) { showAlert('pub-erreur','⚠️ Veuillez entrer un prix valide.'); return; }
+  if (!nom)     { showAlert('pub-erreur','⚠️ Veuillez entrer votre nom complet.'); return; }
+  if (!validerTel(tel)) { showAlert('pub-erreur','⚠️ Numéro de téléphone invalide.'); return; }
+
+  var typeTx    = document.getElementById('pub-type-tx').value;
+  var typeBien  = document.getElementById('pub-type-bien').value;
+  var superficie= document.getElementById('pub-superficie').value;
+  var pieces    = document.getElementById('pub-pieces').value;
+  var sdb       = document.getElementById('pub-sdb').value;
+  var equips    = Array.from(document.querySelectorAll('.equip:checked')).map(function(c){ return c.value; });
+
+  var newId = Date.now();
+  var icones = { appartement:'🏢', maison:'🏠', studio:'🛏', chambre:'🛏' };
+  var bgs    = { louer:'#E8F4E8', vendre:'#FEF3E2', studio:'#EAF1FB' };
+
+  var annonce = {
+    id:     newId,
+    title:  sanitize(titre),
+    loc:    sanitize(commune) + (quartier ? ', ' + sanitize(quartier) : ''),
+    price:  parseInt(prix).toLocaleString('fr-FR'),
+    priceRaw: parseInt(prix),
+    unit:   typeTx === 'louer' ? '/ mois' : '(à vendre)',
+    type:   typeTx,
+    zone:   commune.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-'),
+    bg:     bgs[typeTx] || '#E8F4E8',
+    icon:   icones[typeBien] || '🏠',
+    rooms:  pieces === 'Studio' ? 1 : parseInt(pieces) || 1,
+    bath:   parseInt(sdb) || 1,
+    area:   parseInt(superficie) || 0,
+    new:    true,
+    equip:  equips,
+    desc:   sanitize(desc),
+    photos: photosSelectionnees.slice(),
+    contact:{ nom:sanitize(nom), tel:sanitize(tel) },
+    auteur: session.email,
+    date:   new Date().toISOString()
+  };
+
+  props.unshift(annonce);
+
+  // Succès
+  document.getElementById('success-msg').classList.add('show');
+  window.scrollTo(0,0);
+  photosSelectionnees = [];
+  document.getElementById('photo-previews').innerHTML = '';
+  mettreAJourStats();
+  renderHome();
+}
+
+/* ─────────────────────────────────────────
+   12. COMMUNE AUTOCOMPLETE
+───────────────────────────────────────── */
+var COMMUNES = [
+  {n:'Cocody',r:'Abidjan'},{n:'Yopougon',r:'Abidjan'},{n:'Marcory',r:'Abidjan'},
+  {n:'Plateau',r:'Abidjan'},{n:'Adjamé',r:'Abidjan'},{n:'Abobo',r:'Abidjan'},
+  {n:'Treichville',r:'Abidjan'},{n:'Koumassi',r:'Abidjan'},{n:'Port-Bouët',r:'Abidjan'},
+  {n:'Attécoubé',r:'Abidjan'},{n:'Bingerville',r:'Abidjan banlieue'},{n:'Anyama',r:'Abidjan banlieue'},
+  {n:'Grand-Bassam',r:'Sud-Comoé'},{n:'Bouaké',r:'Vallée du Bandama'},{n:'Daloa',r:'Haut-Sassandra'},
+  {n:'San-Pédro',r:'San-Pédro'},{n:'Yamoussoukro',r:'Capitale'},{n:'Korhogo',r:'Poro'},
+  {n:'Man',r:'Tonkpi'},{n:'Abengourou',r:'Indénié-Djuablin'},{n:'Gagnoa',r:'Gôh'},
+  {n:'Soubré',r:'Nawa'},{n:'Divo',r:'Lôh-Djiboua'},{n:'Agboville',r:'Agnéby-Tiassa'},
+  {n:'Bondoukou',r:'Gontougo'},{n:'Séguéla',r:'Worodougou'},{n:'Odienné',r:'Kabadougou'},
+  {n:'Ferkessédougou',r:'Hambol'},{n:'Dimbokro',r:"N'Zi"},{n:'Aboisso',r:'Sud-Comoé'},
+];
+var _hi = -1;
+var _inp = document.getElementById('commune-input');
+var _dd  = document.getElementById('ac-dropdown');
+var _tag = document.getElementById('commune-tag-wrap');
+
+function _norm(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+
+function _buildDD(q) {
+  var res = q ? COMMUNES.filter(function(c){ return _norm(c.n).indexOf(_norm(q)) !== -1; }) : COMMUNES.slice(0,10);
+  _hi = -1;
+  if (!res.length) {
+    _dd.innerHTML = '<div style="padding:0.8rem;color:var(--muted);text-align:center;font-size:0.82rem;font-style:italic">Ville introuvable — saisissez librement</div>';
+    _dd.classList.add('open'); return;
+  }
+  var abj = res.filter(function(c){ return c.r.indexOf('Abidjan') !== -1; });
+  var oth = res.filter(function(c){ return c.r.indexOf('Abidjan') === -1; });
+  var html = '';
+  if (abj.length) { html += '<div class="ac-sep">Abidjan</div>'; abj.forEach(function(c){ html += '<div class="ac-item" data-n="'+c.n+'">'+c.n+'<span class="ac-reg">'+c.r+'</span></div>'; }); }
+  if (oth.length) { html += '<div class="ac-sep">Autres villes</div>'; oth.forEach(function(c){ html += '<div class="ac-item" data-n="'+c.n+'">'+c.n+'<span class="ac-reg">'+c.r+'</span></div>'; }); }
+  _dd.innerHTML = html;
+  _dd.classList.add('open');
+  _dd.querySelectorAll('.ac-item').forEach(function(el){
+    el.addEventListener('mouseover', function(){ el.classList.add('hi'); });
+    el.addEventListener('mouseout',  function(){ el.classList.remove('hi'); });
+    el.addEventListener('mousedown', function(e){ e.preventDefault(); _choose(el.dataset.n); });
+  });
+}
+
+function _choose(name) {
+  _inp.value = name;
+  _inp.style.borderColor = 'var(--orange)';
+  _inp.style.background = 'var(--orange-light)';
+  _dd.classList.remove('open');
+  _tag.innerHTML = '<span class="commune-tag">📍 '+sanitize(name)+' <button type="button" onclick="_clr()">×</button></span>';
+}
+
+function _clr() {
+  _inp.value = ''; _inp.style.borderColor = ''; _inp.style.background = '';
+  _tag.innerHTML = ''; _inp.focus();
+}
+
+_inp.addEventListener('input',  function(){ _tag.innerHTML=''; _inp.style.borderColor=''; _inp.style.background=''; this.value.trim() ? _buildDD(this.value.trim()) : _dd.classList.remove('open'); });
+_inp.addEventListener('focus',  function(){ _buildDD(this.value.trim()); });
+_inp.addEventListener('blur',   function(){ setTimeout(function(){ _dd.classList.remove('open'); }, 160); });
+_inp.addEventListener('keydown',function(e){
+  var items = Array.from(_dd.querySelectorAll('.ac-item'));
+  if (!items.length) return;
+  if (e.key==='ArrowDown'){ e.preventDefault(); _hi=Math.min(_hi+1,items.length-1); }
+  else if(e.key==='ArrowUp'){ e.preventDefault(); _hi=Math.max(_hi-1,0); }
+  else if(e.key==='Enter'&&_hi>=0){ e.preventDefault(); _choose(items[_hi].dataset.n); return; }
+  else if(e.key==='Escape'){ _dd.classList.remove('open'); return; }
+  items.forEach(function(it,i){ it.classList.toggle('hi', i===_hi); });
+});
+
+/* ─────────────────────────────────────────
+   13. RECHERCHE AVANCÉE
+───────────────────────────────────────── */
+var searchState = { type:'', lieu:'', min:0, max:0 };
+
+function lancerRecherche() {
+  searchState.type = document.getElementById('s-type').value;
+  searchState.lieu = document.getElementById('s-lieu').value.trim().toLowerCase();
+  searchState.min  = parseInt(document.getElementById('s-min').value) || 0;
+  searchState.max  = parseInt(document.getElementById('s-max').value) || 0;
+  activeFilter = searchState.type || 'all';
+  showPage('listings');
+  setTimeout(renderListings, 100);
+}
+
+/* ─────────────────────────────────────────
+   14. RENDU ANNONCES
+───────────────────────────────────────── */
+function makeCard(p) {
+  var bC = p.type==='louer'?'badge-rent':p.type==='vendre'?'badge-sell':'badge-room';
+  var bT = p.type==='louer'?'À louer':p.type==='vendre'?'À vendre':'Studio/Chambre';
+  var imgHtml = p.photos && p.photos.length
+    ? '<img src="' + p.photos[0].data + '" alt="' + p.title + '">'
+    : '<div class="no-photo">' + p.icon + '</div>';
+  return '<div class="prop-card" onclick="openProp(' + p.id + ')">' +
+    '<div class="prop-img" style="background:'+p.bg+'">' + imgHtml +
+      '<span class="prop-badge '+bC+'">'+bT+'</span>' +
+      (p.new?'<span class="badge-new">Nouveau</span>':'') +
+    '</div>' +
+    '<div class="prop-body">' +
+      '<div class="prop-title">'+p.title+'</div>' +
+      '<div class="prop-loc">📍 '+p.loc+'</div>' +
+      '<div class="prop-price">'+p.price+' FCFA <span>'+p.unit+'</span></div>' +
+      '<div class="prop-features">' +
+        '<span class="feat">🛏 '+p.rooms+' pièce'+(p.rooms>1?'s':'')+'</span>' +
+        '<span class="feat">🚿 '+p.bath+' sdb</span>' +
+        (p.area ? '<span class="feat">📐 '+p.area+' m²</span>' : '') +
+      '</div>' +
+    '</div></div>';
+}
+
+function filtrerProps() {
+  var fMin = parseInt(document.getElementById('f-min').value) || 0;
+  var fMax = parseInt(document.getElementById('f-max').value) || 0;
+  return props.filter(function(p) {
+    var okType = (activeFilter==='all') || (p.type===activeFilter) || (p.zone.indexOf(activeFilter)!==-1);
+    var okLieu = !searchState.lieu || p.loc.toLowerCase().indexOf(searchState.lieu) !== -1 || p.zone.indexOf(searchState.lieu) !== -1;
+    var okMin  = !fMin || p.priceRaw >= fMin;
+    var okMax  = !fMax || p.priceRaw <= fMax;
+    return okType && okLieu && okMin && okMax;
+  });
+}
+
+function renderHome() {
+  var el = document.getElementById('home-listings');
+  var recents = props.slice(0,6);
+  el.innerHTML = recents.length
+    ? recents.map(makeCard).join('')
+    : '<div class="empty-state"><div class="emoji">🏠</div><h3>Aucune annonce pour le moment</h3><p>Soyez le premier à publier une annonce !</p></div>';
+  mettreAJourStats();
+}
+
+var activeFilter = 'all';
+
+function renderListings() {
+  var filtered = filtrerProps();
+  var el = document.getElementById('all-listings');
+  el.innerHTML = filtered.length
+    ? filtered.map(makeCard).join('')
+    : '<div class="empty-state"><div class="emoji">🔍</div><h3>Aucune annonce trouvée</h3><p>Essayez de modifier vos critères de recherche ou votre budget.</p></div>';
+  document.getElementById('result-count').textContent = filtered.length + ' annonce' + (filtered.length>1?'s':'') + ' trouvée' + (filtered.length>1?'s':'');
+}
+
+function mettreAJourStats() {
+  document.getElementById('stat-annonces').textContent = props.length + '+';
+  var c = { louer:0, vendre:0, studio:0 };
+  props.forEach(function(p){ if(c[p.type]!==undefined) c[p.type]++; });
+  document.getElementById('count-louer').textContent  = c.louer  + ' annonce' + (c.louer>1?'s':'');
+  document.getElementById('count-vendre').textContent = c.vendre + ' annonce' + (c.vendre>1?'s':'');
+  document.getElementById('count-studio').textContent = c.studio + ' annonce' + (c.studio>1?'s':'');
+}
+
+/* ─────────────────────────────────────────
+   15. DÉTAIL ANNONCE
+───────────────────────────────────────── */
+function openProp(id) {
+  var p = props.find(function(x){ return x.id===id; });
+  if (!p) return;
+  var msg = '🏠 ' + p.title + '\n' +
+            '📍 ' + p.loc + '\n' +
+            '💰 ' + p.price + ' FCFA ' + p.unit + '\n' +
+            (p.area ? '📐 ' + p.area + ' m²\n' : '') +
+            (p.equip && p.equip.length ? '✅ ' + p.equip.join(', ') + '\n' : '') +
+            '\n📞 ' + p.contact.nom + ' — ' + p.contact.tel +
+            '\n\nAppeler ou contacter via WhatsApp ?';
+  if (confirm(msg)) {
+    window.location.href = 'tel:' + p.contact.tel.replace(/\s/g,'');
+  }
+}
+
+/* ─────────────────────────────────────────
+   16. NAVIGATION
+───────────────────────────────────────── */
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('page-' + name).classList.add('active');
+  var dLinks = document.querySelectorAll('.nav-links a');
+  dLinks.forEach(function(a){ a.classList.remove('active'); });
+  var map = {home:0, listings:1, publish:2, contact:3};
+  if (dLinks[map[name]]) dLinks[map[name]].classList.add('active');
+  var mItems = document.querySelectorAll('.mobile-nav-item');
+  mItems.forEach(function(b){ b.classList.remove('active'); });
+  var mEl = document.getElementById('mnav-' + name);
+  if (mEl) mEl.classList.add('active');
+  window.scrollTo(0,0);
+  if (name === 'listings') renderListings();
+}
+
+function filterAndGo(filter) {
+  activeFilter = filter;
+  searchState = {type:'',lieu:'',min:0,max:0};
+  showPage('listings');
+  setTimeout(function() {
+    document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.toggle('active', c.dataset.filter===filter); });
+    renderListings();
+  }, 100);
+}
+
+document.getElementById('filter-chips').addEventListener('click', function(e) {
+  if (e.target.classList.contains('filter-chip')) {
+    document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
+    e.target.classList.add('active');
+    activeFilter = e.target.dataset.filter;
+    renderListings();
+  }
+});
+
+/* ─────────────────────────────────────────
+   17. MODALS
+───────────────────────────────────────── */
+function openModal(name)  { document.getElementById('modal-'+name).classList.add('open'); }
+function closeModal(name) { document.getElementById('modal-'+name).classList.remove('open'); }
+
+document.querySelectorAll('.modal-overlay').forEach(function(m) {
+  m.addEventListener('click', function(e){ if(e.target===this) this.classList.remove('open'); });
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(function(m){ m.classList.remove('open'); });
+});
+
+/* ─────────────────────────────────────────
+   18. FORMULAIRE CONTACT
+───────────────────────────────────────── */
+function envoyerMessage() {
+  var nom = document.getElementById('ct-nom').value.trim();
+  var email = document.getElementById('ct-email').value.trim();
+  var msg = document.getElementById('ct-msg').value.trim();
+  if (!nom || !email || !msg) { alert('⚠️ Veuillez remplir tous les champs.'); return; }
+  if (!validerEmail(email)) { alert('⚠️ Email invalide.'); return; }
+  showAlert('ct-ok', '✅ Message envoyé ! Nous vous répondrons sous 24h.', 'alert-success');
+  document.getElementById('ct-nom').value = '';
+  document.getElementById('ct-email').value = '';
+  document.getElementById('ct-msg').value = '';
+}
+
+/* ─────────────────────────────────────────
+   19. PUBLICATION — Formulaire
+───────────────────────────────────────── */
+function submitForm() {
+  document.getElementById('success-msg').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+/* ─────────────────────────────────────────
+   20. INITIALISATION
+───────────────────────────────────────── */
+majNavAuth();
+renderHome();
+renderListings();
+mettreAJourStats();
+
 </script>
+</body>
+</html>
